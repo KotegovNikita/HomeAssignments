@@ -1,7 +1,7 @@
 /* Nikita Kotegov st128906@student.spbu.ru Homework1 */
 
 #include <iostream>
-#include "Homework1.hpp"
+#include "Header.hpp"
 
 using namespace std;
 
