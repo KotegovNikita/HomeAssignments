@@ -2,11 +2,16 @@
 #include "Header.hpp"
 
 
-void Hello(int k) {
+void Hello() {
 	std::cout << "Hello world\n";
-	for (int i = 0; i < k; i++) {
+	while (true) {
 		std::string name = "";
 		std::cin >> name;
-		std::cout << "Hello, " + name + "\n";
+		if (name == "break") {
+			break;
+		}
+		else {
+			std::cout << "Hello, " + name + "!" << std::endl;
+		}
 	}
 }
