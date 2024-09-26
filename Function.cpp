@@ -1,13 +1,12 @@
 #include <iostream>
 #include "Header.hpp"
 
-using namespace std;
 
 void Hello(int k) {
-	cout << "Hello world\n";
+	std::cout << "Hello world\n";
 	for (int i = 0; i < k; i++) {
-		string name = "";
-		cin >> name;
-		cout << "Hello, " + name + "\n";
+		std::string name = "";
+		std::cin >> name;
+		std::cout << "Hello, " + name + "\n";
 	}
 }
