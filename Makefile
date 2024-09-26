@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -g
 
 objects = $(files:.cpp=.o)
-files = main.cpp Source_Homework1.cpp 
+files = main.cpp Function.cpp
 deps = Header.hpp
 
 target = Homework1
