@@ -1,5 +1,7 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment1 */
+
 #include <iostream>
-#include "Header.hpp"
+#include "header.hpp"
 
 
 void Hello() {

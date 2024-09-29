@@ -2,10 +2,10 @@ CXX = g++
 CXXFLAGS = -g
 
 objects = $(files:.cpp=.o)
-files = main.cpp Function.cpp
-deps = Header.hpp
+files = main_hello.cpp function.cpp
+deps = header.hpp
 
-target = Homework1
+target = main_hello
 
 all: $(target)
 
