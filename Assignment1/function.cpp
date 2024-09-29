@@ -1,6 +1,6 @@
 /* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment1 */
 
-#include <iostream>
+
 #include "header.hpp"
 
 
