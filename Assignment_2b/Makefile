@@ -1,0 +1,20 @@
+CXX = g++
+CXXFLAGS = -g
+
+objects = $(files:.cpp=.o)
+files = main_2b.cpp
+deps = header_2b.hpp
+
+target = main_2b
+
+all: $(target)
+
+$(target): $(objects)
+	$(CXX) $(CXXFLAGS) $(objects) -o $(target)
+
+%.o: %.cpp $(deps)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+.PHONY: clean
+clean:
+	rm -f $(objects) $(target)
