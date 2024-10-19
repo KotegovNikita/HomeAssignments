@@ -2,32 +2,10 @@
 
 #include "header_2b.hpp"
 
-
-int operation_num(char operation, int num1, int num2) { //Function for proccessing operations on numbers
-    switch(operation) {
-        case '+':
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1 * num2;
-        case '/':
-            return num1 / num2;
-        default:
-            return 1;
-    }
-}
-
-void push(int value) { // Function for add value in stack
-    stack[++top] = value;
-}
-int pop() { // Function for extraction value from stack
-    return stack[top--];
-}
-
 int main() {
     
-    std::string input_string = "3 4 + 2 * 7 /"; // String on input
+    std::string input_string; // String on input
+    std::getline(std::cin, input_string);
 
     capacity = input_string.length();
     stack = new int[capacity]; // Create array for stack
