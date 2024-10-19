@@ -21,7 +21,7 @@ int main() {
     }
 
     std::ofstream outfile;
-    outfile.open("file.pdf",std::ios::binary);
+    outfile.open("file_result.pdf",std::ios::binary);
     outfile.write(buffer, fileSize);
 
 
