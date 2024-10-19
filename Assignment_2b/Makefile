@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -g
 
 objects = $(files:.cpp=.o)
-files = main_2b.cpp
+files = main_2b.cpp function_2b.cpp
 deps = header_2b.hpp
 
 target = main_2b
