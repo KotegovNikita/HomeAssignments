@@ -42,8 +42,8 @@ public:
     int getPower() const {
         return power;
     }
-    void setPower(int& a) {
-    age = a;
+    void setPower(int a) {
+    power = a;
     }
     ~Transformers() {}
 };
@@ -51,8 +51,22 @@ public:
 class Autobot: public Transformers {
 private:
     std::string hostility;
-    std::string type;
+    int helth;
 public:
     Autobot(std::string n, int p, int a, Alliance* al, std::string hostility)
-        : Transformers(n, p, a, Type::Autobot, al), hostility(hostility),  {}
+        : Transformers(n, p, a, Type("Autobot"), al), hostility(hostility), health(100) {}
+
+    std::string getHostility() const {
+        retutn hostility;
+    }
+    void setHostility(const std::string& h) {
+        hostility = h;
+    }
+
+    int getHealth() const {
+        return health;
+    }
+    void setHealth(int h) {
+    health = he;
+    }
 };
