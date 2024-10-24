@@ -14,6 +14,9 @@ void Autobot::setHostility(const std::string& h) {
 int Autobot::getHealth() const {
     return health;
 }
+Alliance* Autobot::getAlliance() const {
+    return alliance;
+}
 
 void Autobot::setHealth(int he) {
     health = he;
