@@ -11,6 +11,7 @@ private:
     int power;
     int armor;
     Type type;
+protected:
     Alliance* alliance;
 
 public:
@@ -19,6 +20,7 @@ public:
     void setName(const std::string& n);
     int getPower() const;
     void setPower(int a);
+    Alliance* getAlliance() const;
     ~Transformers();
 };
 
