@@ -14,6 +14,7 @@ public:
     void setHostility(const std::string& h);
     int getHealth() const;
     void setHealth(int he);
+    Alliance* getAlliance() const;
 };
 
 #endif
