@@ -10,7 +10,4 @@ TEST(AllianceTest, DecepticonTest) {
     EXPECT_EQ(decepticons.getName(), "Decepticons");
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+
