@@ -18,3 +18,6 @@ int Decepticon::getHealth() const {
 void Decepticon::setHealth(int he) {
     health = he;
 }
+Alliance* Decepticon::getAlliance() const {
+    return alliance;
+}
