@@ -18,5 +18,8 @@ int Transformers::getPower() const {
 void Transformers::setPower(int a) {
     power = a;
 }
+Alliance* Transformers::getAlliance() const {
+    return alliance;
+}
 
 Transformers::~Transformers() {}
