@@ -35,11 +35,9 @@ all: $(PROJECT)
 
 .PHONY: clean
 clean:
-	rm -f *.o
+	rm -f *.o $(PROJECT).a
 
 cleanall: clean
-	rm -f $(PROJECT)
-	rm -f $(LIBPROJECT)
-	rm -f $(TESTPROJECT)
+	rm -f $(PROJECT) $(LIBPROJECT) $(TESTPROJECT)
 
 
