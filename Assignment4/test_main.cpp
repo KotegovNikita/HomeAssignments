@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment4 */
 #include <gtest/gtest.h>
 
 int main(int argc, char **argv)

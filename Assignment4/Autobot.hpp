@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment4 */
 #ifndef AUTOBOT_HPP
 #define AUTOBOT_HPP
 

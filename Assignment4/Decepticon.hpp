@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment4 */
 #ifndef DECEPTICON_HPP
 #define DECEPTICON_HPP
 

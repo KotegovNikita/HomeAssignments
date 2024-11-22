@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment4 */
 #ifndef TRANSFORMERS_HPP
 #define TRANSFORMERS_HPP
 

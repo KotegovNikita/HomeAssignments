@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment4 */
 #include "Neutral.hpp"
 
 Neutral::Neutral(std::string n, int p, int a, Alliance* al, std::string purpose)

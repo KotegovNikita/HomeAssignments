@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment4 */
 #include "Transformers.hpp"
 
 Transformers::Transformers(std::string n, int p, int a, Type t, Alliance* al)
