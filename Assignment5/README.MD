@@ -1,10 +1,10 @@
-#Assignment 3
+#Assignment 4
 ## Author
 Kotegov Nikita Andreevich | Group B 81
 ## Contacts
 st128906@student.spbu.ru
 ## Description
-Creating Transformers-themed classes and testing them google test
+The programm has three classes and implements three virtual methods
 ## Build
 make
 ## Run
