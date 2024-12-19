@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment5 */
 #include "Decepticon.hpp"
 
 Decepticon::Decepticon(std::string n, int p, int a, Alliance* al, std::string hostility)

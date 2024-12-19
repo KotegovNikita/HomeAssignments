@@ -14,17 +14,11 @@ protected:
     Alliance* alliance;
 
 public:
-    virtual void transform() const {
-        std::cout << "Transformer: transform()\n";
-    }
-    virtual void openFire() const {
-        std::cout << "Transformer: openFire()\n";
-    }
-    virtual void ulta() const {
-        std::cout << "Transformer: ulta()\n";
-    }
+    virtual void transform() const;
+    virtual void openFire() const;
+    virtual void ulta() const;
 
-    virtual ~Transformers() = default;
+    virtual ~Transformers();
 
     Transformers(std::string n, int p, int a, Alliance* al);
     std::string getName() const;
@@ -35,3 +29,4 @@ public:
 };
 
 #endif
+

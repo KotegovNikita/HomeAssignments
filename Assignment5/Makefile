@@ -1,45 +1,48 @@
-PROJECT = Transformers
+PROJECT = app
+
 LIBPROJECT = $(PROJECT).a
+
 TESTPROJECT = test-$(PROJECT)
 
 CXX = g++
+
 A = ar
 
-CXXFLAGS = -g -Werror -Wpedantic -Wall
-LDFLAGS = -lgtest -lgtest_main -pthread
+AFLAGS = rsv
 
-DEPS = Autobot.hpp Decepticon.hpp Transformers.hpp
-OBJ = Autobot.o Decepticon.o Transformers.o
-MAIN_OBJ = main.o
+CXXFLAGS = -I. -std=c++17 -Wall -Werror -Wpedantic -g -fPIC
+
+LDXXFLAGS = $(CXXFLAGS) -L. -l:$(LIBPROJECT)
+
+LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
+
+DEPS = $(wildcard *.hpp)
+SRC = $(filter-out main.cpp, $(wildcard *.cpp))
+OBJ = $(filter-out test.o, $(patsubst %.cpp, %.o, $(SRC)))
+
+TESTOBJ = test.o
 
 .PHONY: default
-default: all
+
+default: all;
+
+%.o: %.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+
+$(LIBPROJECT) : $(OBJ)
+	$(A) $(AFLAGS) $@ $^
+
+$(PROJECT) : main.o $(LIBPROJECT)
+	$(CXX) -o $@ main.o $(LDXXFLAGS)
+
+$(TESTPROJECT) : $(LIBPROJECT) $(TESTOBJ)
+	$(CXX) $(TESTOBJ) -o $@ $(LDGTESTFLAGS)
+
+test: $(TESTPROJECT)
 
 all: $(PROJECT)
 
-$(LIBPROJECT): $(OBJ)
-	$(A) rsv $@ $^
-
-$(PROJECT): $(LIBPROJECT) $(MAIN_OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $(MAIN_OBJ) $(LIBPROJECT) $(LDFLAGS)
-
-$(TESTPROJECT): $(LIBPROJECT) $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJ) $(LIBPROJECT) $(LDFLAGS)
-
-%.o: %.cpp $(DEPS)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-main.o: main.cpp $(DEPS)
-	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
-
-test: $(TESTPROJECT)
-	./$(TESTPROJECT)
-
 .PHONY: clean
+
 clean:
-	rm -f *.o $(PROJECT).a $(LIBPROJECT) $(TESTPROJECT)
-
-.PHONY: cleanall
-cleanall: clean
-	rm -f $(PROJECT) $(LIBPROJECT) $(TESTPROJECT)
-
+	rm $(PROJECT) $(TESTPROJECT) $(LIBPROJECT) *.o 

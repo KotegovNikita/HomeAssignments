@@ -1,3 +1,4 @@
+/* Nikita Kotegov st128906@student.spbu.ru Group B81 Assignment5 */
 #ifndef ALLIANCE_HPP
 #define ALLIANCE_HPP
 
