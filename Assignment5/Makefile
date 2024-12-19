@@ -45,4 +45,4 @@ all: $(PROJECT)
 .PHONY: clean
 
 clean:
-	rm $(PROJECT) $(TESTPROJECT) $(LIBPROJECT) *.o 
+	rm -f $(PROJECT) $(TESTPROJECT) $(LIBPROJECT) *.o 

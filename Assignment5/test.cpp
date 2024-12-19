@@ -4,10 +4,10 @@
 #include "transformer.hpp"
 #include "autobot.hpp"
 #include "decepticon.hpp"
-#include "alliance.hpp"  // Подключаем реальный класс Alliance
+#include "alliance.hpp"  
 
 TEST(Transformer, CheckFireJump) {
-    Alliance alliance("Autobots");  // Используем реальный объект Alliance
+    Alliance alliance("Autobots"); 
     Transformers hero("Hero", 100, 50, &alliance);
 
     hero.openFire();
