@@ -1,45 +1,16 @@
 PROJECT = main
-LIBPROJECT = $(PROJECT).a
-TESTPROJECT = test-$(PROJECT)
 
 CXX = g++
-A = ar
 
-AFLAGS = rsv
-CXXFLAGS = -I. -std=c++17 -Wall -g -fPIC
-LDXXFLAGS = $(CXXFLAGS) -L. -l:$(LIBPROJECT)
+CXXFLAGS = -I. -std=c++17 -Wall -Werror -Wpedantic -g -fPIC
+TESTFLAGS = -lgtest -lgtest_main -pthread
 
-LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
+SRC = main.cpp
 
-DEPS = $(wildcard *.h)
-OBJ = main.o
-TEST-OBJ = test_main.o
+$(PROJECT) : $(SRC)
+	$(CXX) -o $@ $< $(TESTFLAGS)
 
-.PHONY: default
-default: all;
-
-%.o: %.cpp $(DEPS)
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
-
-$(LIBPROJECT): $(OBJ)
-	$(A) $(AFLAGS) $@ $^
-	
-$(PROJECT): main.o $(LIBPROJECT)
-	$(CXX) -o $@ main.o $(LDXXFLAGS)
-	
-$(TESTPROJECT): $(LIBPROJECT) $(TEST-OBJ)
-	$(CXX) -o $@ $(TEST-OBJ) $(LDGTESTFLAGS)
-	
-test: $(TESTPROJECT)
-
-all: $(PROJECT) test
-
-.PHONY: clean
+all: $(PROJECT)
 
 clean:
-	rm -f *.o
-
-cleanall: clean
-	rm -f $(PROJECT)
-	rm -f $(LIBPROJECT)
-	rm -f $(TESTPROJECT)
+	rm $(PROJECT)
